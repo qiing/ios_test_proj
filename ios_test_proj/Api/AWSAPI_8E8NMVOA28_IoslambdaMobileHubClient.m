@@ -15,7 +15,7 @@
  
 
 
-#import "AWSAPI_7WGNCEXN1B_IOSawstestMobileHubClient.h"
+#import "AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient.h"
 #import <AWSCore/AWSCore.h>
 #import <AWSCore/AWSSignature.h>
 #import <AWSCore/AWSSynchronizedMutableDictionary.h>
@@ -43,7 +43,7 @@
 
 @end
 
-@interface AWSAPI_7WGNCEXN1B_IOSawstestMobileHubClient()
+@interface AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient()
 
 @property (nonatomic, strong) AWSServiceConfiguration *configuration;
 
@@ -55,9 +55,9 @@
 
 @end
 
-@implementation AWSAPI_7WGNCEXN1B_IOSawstestMobileHubClient
+@implementation AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient
 
-static NSString *const AWSInfoClientKey = @"AWSAPI_7WGNCEXN1B_IOSawstestMobileHubClient";
+static NSString *const AWSInfoClientKey = @"AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient";
 
 @synthesize configuration = _configuration;
 
@@ -76,10 +76,10 @@ static AWSSynchronizedMutableDictionary *_serviceClients = nil;
                                                            credentialsProvider:nil];
     }
 
-    static AWSAPI_7WGNCEXN1B_IOSawstestMobileHubClient *_defaultClient = nil;
+    static AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient *_defaultClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _defaultClient = [[AWSAPI_7WGNCEXN1B_IOSawstestMobileHubClient alloc] initWithConfiguration:serviceConfiguration];
+        _defaultClient = [[AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient alloc] initWithConfiguration:serviceConfiguration];
     });
 
     return _defaultClient;
@@ -90,13 +90,13 @@ static AWSSynchronizedMutableDictionary *_serviceClients = nil;
     dispatch_once(&onceToken, ^{
         _serviceClients = [AWSSynchronizedMutableDictionary new];
     });
-    [_serviceClients setObject:[[AWSAPI_7WGNCEXN1B_IOSawstestMobileHubClient alloc] initWithConfiguration:configuration]
+    [_serviceClients setObject:[[AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient alloc] initWithConfiguration:configuration]
                         forKey:key];
 }
 
 + (instancetype)clientForKey:(NSString *)key {
     @synchronized(self) {
-        AWSAPI_7WGNCEXN1B_IOSawstestMobileHubClient *serviceClient = [_serviceClients objectForKey:key];
+        AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient *serviceClient = [_serviceClients objectForKey:key];
         if (serviceClient) {
             return serviceClient;
         }
@@ -106,7 +106,7 @@ static AWSSynchronizedMutableDictionary *_serviceClients = nil;
         if (serviceInfo) {
             AWSServiceConfiguration *serviceConfiguration = [[AWSServiceConfiguration alloc] initWithRegion:serviceInfo.region
                                                                                         credentialsProvider:serviceInfo.cognitoCredentialsProvider];
-            [AWSAPI_7WGNCEXN1B_IOSawstestMobileHubClient registerClientWithConfiguration:serviceConfiguration
+            [AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient registerClientWithConfiguration:serviceConfiguration
                                                     forKey:key];
         }
 
@@ -129,7 +129,7 @@ static AWSSynchronizedMutableDictionary *_serviceClients = nil;
     if (self = [super init]) {
         _configuration = [configuration copy];
 
-        NSString *URLString = @"https://7wgncexn1b.execute-api.us-east-1.amazonaws.com/Development";
+        NSString *URLString = @"https://8e8nmvoa28.execute-api.us-east-1.amazonaws.com/Development";
         if ([URLString hasSuffix:@"/"]) {
             URLString = [URLString substringToIndex:[URLString length] - 1];
         }

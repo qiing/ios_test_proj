@@ -10,4 +10,5 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#import "AWSAPI_7WGNCEXN1B_IOSawstestMobileHubClient.h"
+#import "AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient.h"
+
