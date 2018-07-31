@@ -16,12 +16,34 @@ import AWSCore
 import AWSAPIGateway
 import AWSMobileClient
 import Vision
+
+//struct information{
+//    let body:[]
+//    let re
+//}
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var imageView: UIImageView!
-    let bucketName = "ios-test-ning"
+    let bucketName = "iosprojfixed-deployments-mobilehub-1649974884"
+    var contentUrl : URL!
+    var s3Url: URL!
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Initialize the Amazon Cognito credentials provider
+        
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,
+                                                                identityPoolId:"us-east-1:aea3291c-153c-4209-9b1f-1288c00a23b6")
+        
+        let configuration = AWSServiceConfiguration(region:.USEast1, credentialsProvider:credentialsProvider)
+        
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        
+        s3Url = AWSS3.default().configuration.endpoint.url
+        
+    }
+    func localFaceDetection(){
         
         guard let image = UIImage(named:"sample1") else
         {return}
@@ -59,7 +81,7 @@ class ViewController: UIViewController {
                     redView.alpha = 0.4
                     
                     redView.frame = CGRect(x:x, y:y, width:width, height:height)
-                    self.view.addSubview(redView)
+                     self.view.addSubview(redView)
                     
                     print(faceObservation.boundingBox)
                 }
@@ -77,18 +99,6 @@ class ViewController: UIViewController {
                 print("Failed", reqErr)
             }
         }
-        
-        
-        
-        
-        // Initialize the Amazon Cognito credentials provider
-        
-        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,
-                                                                identityPoolId:"us-east-1:bbcb892d-7b21-472e-a580-f8563881b0b2")
-        
-        let configuration = AWSServiceConfiguration(region:.USEast1, credentialsProvider:credentialsProvider)
-        
-        AWSServiceManager.default().defaultServiceConfiguration = configuration
     }
     
     func uploadFile(with resource: String, type:String){
@@ -120,10 +130,39 @@ class ViewController: UIViewController {
     @IBAction func onUploadTapped(){
         uploadFile(with: "banana", type: "jpeg")
     }
-    @IBAction func onshowtapped(){
-        doInvokeAPI()
+    func dummy()
+    {
+        self.contentUrl = URL(string:"QQQQ")
     }
-    func doInvokeAPI() {
+    @IBAction func onshowtapped(){
+        
+//        let x
+//        self.localFaceDetection()
+        self.doInvokeAPI()
+//        dummy()
+//        DispatchQueue.main.async {
+//
+//
+//            print("&&&&&")
+//            print(self.contentUrl)
+//
+//        }
+//
+        
+
+
+    }
+    
+    func show(){
+        do {
+            let data = try Data(contentsOf: contentUrl)
+            imageView.image = UIImage(data: data)
+
+        }catch {
+
+        }
+    }
+    func doInvokeAPI(){
         // change the method name, or path or the query string parameters here as desired
         let httpMethodName = "POST"
         // change to any valid path you configured in the API
@@ -138,7 +177,7 @@ class ViewController: UIViewController {
             "\"key1\":\"value1\", \n  " +
             "\"key2\":\"value2\", \n  " +
         "\"key3\":\"value3\"\n}"
-        
+        self.contentUrl = URL(string:"11111")
         // Construct the request object
         let apiRequest = AWSAPIGatewayRequest(httpMethod: httpMethodName,
                                               urlString: URLString,
@@ -146,17 +185,16 @@ class ViewController: UIViewController {
                                               headerParameters: headerParameters,
                                               httpBody: httpBody)
         
+        
         // Create a service configuration object for the region your AWS API was created in
         let serviceConfiguration = AWSServiceConfiguration(
             region: AWSRegionType.USEast1,
             credentialsProvider: AWSMobileClient.sharedInstance().getCredentialsProvider())
         
         AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient.register(with: serviceConfiguration!, forKey: "CloudLogicAPIKey")
-        
         // Fetch the Cloud Logic client to be used for invocation
         let invocationClient =
             AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient(forKey: "CloudLogicAPIKey")
-        
         invocationClient.invoke(apiRequest).continueWith { (
             task: AWSTask) -> Any? in
             
@@ -168,17 +206,43 @@ class ViewController: UIViewController {
             
             // Handle successful result here
             let result = task.result!
+            print(type(of: result.responseData))
             let responseString =
                 String(data: result.responseData!, encoding: .utf8)
             print("******")
             print(responseString)
+            
+            
+            
             print("------")
             print(result.statusCode)
-
+            print(result.self)
+//            let link
+            print("-------")
             
+            
+            
+            if let unwrappes = responseString{
+                print("<#T##items: Any...##Any#>"+unwrappes)
+                self.contentUrl = URL(string: unwrappes)
+
+                
+            }
+//            print("test:"+test)
+            print("self.contentUrl")
+            print(self.contentUrl)
+            self.show()
             return nil
         }
+//        print("test0000000")
+//        if let unwrappes = test{
+//            print("erererere"+unwrappes)
+//            self.contentUrl = URL(string: unwrappes)
+//
+//        }
+//        self.contentUrl = URL(string:"44444")
     }
+    
     
 }
 

@@ -15,6 +15,10 @@
 		295630AF20EC0430005CB40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295630AE20EC0430005CB40E /* Assets.xcassets */; };
 		295630B220EC0430005CB40E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295630B020EC0430005CB40E /* LaunchScreen.storyboard */; };
 		295630BC20EC111C005CB40E /* banana.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 295630BB20EC111C005CB40E /* banana.jpeg */; };
+		295F8C58210FE021008CD536 /* people.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 295F8C54210FE021008CD536 /* people.jpg */; };
+		295F8C59210FE021008CD536 /* Parties.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 295F8C55210FE021008CD536 /* Parties.jpg */; };
+		295F8C5A210FE021008CD536 /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 295F8C56210FE021008CD536 /* images.jpeg */; };
+		295F8C5B210FE021008CD536 /* children.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 295F8C57210FE021008CD536 /* children.jpg */; };
 		29B287CC210B3DCD00BDAB06 /* AWSAPI_8E8NMVOA28_ResponseSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B287C9210B3DCD00BDAB06 /* AWSAPI_8E8NMVOA28_ResponseSchema.m */; };
 		29B287CD210B3DCD00BDAB06 /* AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B287CA210B3DCD00BDAB06 /* AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient.m */; };
 		29B287CE210B3DCD00BDAB06 /* AWSAPI_8E8NMVOA28_RequestSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B287CB210B3DCD00BDAB06 /* AWSAPI_8E8NMVOA28_RequestSchema.m */; };
@@ -31,6 +35,10 @@
 		295630B120EC0430005CB40E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		295630B320EC0430005CB40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295630BB20EC111C005CB40E /* banana.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banana.jpeg; sourceTree = "<group>"; };
+		295F8C54210FE021008CD536 /* people.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = people.jpg; sourceTree = "<group>"; };
+		295F8C55210FE021008CD536 /* Parties.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Parties.jpg; sourceTree = "<group>"; };
+		295F8C56210FE021008CD536 /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
+		295F8C57210FE021008CD536 /* children.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = children.jpg; sourceTree = "<group>"; };
 		29B287C6210B3DCD00BDAB06 /* AWSAPI_8E8NMVOA28_ResponseSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWSAPI_8E8NMVOA28_ResponseSchema.h; sourceTree = "<group>"; };
 		29B287C7210B3DCD00BDAB06 /* AWSAPI_8E8NMVOA28_RequestSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWSAPI_8E8NMVOA28_RequestSchema.h; sourceTree = "<group>"; };
 		29B287C8210B3DCD00BDAB06 /* AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWSAPI_8E8NMVOA28_IoslambdaMobileHubClient.h; sourceTree = "<group>"; };
@@ -86,6 +94,10 @@
 				295630BB20EC111C005CB40E /* banana.jpeg */,
 				295630A720EC0430005CB40E /* AppDelegate.swift */,
 				295630A920EC0430005CB40E /* ViewController.swift */,
+				295F8C56210FE021008CD536 /* images.jpeg */,
+				295F8C54210FE021008CD536 /* people.jpg */,
+				295F8C57210FE021008CD536 /* children.jpg */,
+				295F8C55210FE021008CD536 /* Parties.jpg */,
 				293F150B20FC446E00E44E8B /* Bridging_Header.h */,
 				29B287C5210B3DCD00BDAB06 /* Api */,
 				293F150920FC443100E44E8B /* awsconfiguration.json */,
@@ -180,8 +192,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				295630BC20EC111C005CB40E /* banana.jpeg in Resources */,
+				295F8C58210FE021008CD536 /* people.jpg in Resources */,
+				295F8C5B210FE021008CD536 /* children.jpg in Resources */,
+				295F8C59210FE021008CD536 /* Parties.jpg in Resources */,
 				295630B220EC0430005CB40E /* LaunchScreen.storyboard in Resources */,
 				293F150A20FC443100E44E8B /* awsconfiguration.json in Resources */,
+				295F8C5A210FE021008CD536 /* images.jpeg in Resources */,
 				295630AF20EC0430005CB40E /* Assets.xcassets in Resources */,
 				295630AD20EC0430005CB40E /* Main.storyboard in Resources */,
 			);
